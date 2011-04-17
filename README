@@ -1,0 +1,12 @@
+Este es un ejemplo del uso de las relaciones muchos a muchos usando GWT y App Engine.
+
+El objetivo es relacionar una persona con muchos roles (en un restaurante los roles pueden ser: Mesero, Administrador, Cocinero, etc.) y viceversa, un rol estar asigado a muchas personas.
+Las clases Persona y Rol se encuentran en la carpeta shared, estas no tienen muchas características, la más relevante es el ArrayList<Long> que almacenará el id de los objetos de la clase contraria con la que se relaciona. 
+Así, si existen 2 personas y 3 roles y la "persona uno"(id p1) realiza los roles de: "Administrador"(id r2) y "Cocinero"(id r3); el ArrayList de la "persona uno" contendrá los valores (r2, r3).
+Si la "persona dos"(id p2) realiza los roles de: "Cocinero"(id r3) y "Mesero"(id r1); el ArrayList de la "persona dos" contendrá los valores (r3, r1).
+El rol de "Administrador" tendrá en su ArrayList el valor (p1); el rol de "Mesero" tendrá en su ArrayList el valor de (p2); finalmente, el rol de "Cocinero" tendrá en su ArrayList los valores de (p1, p2).
+De esta manera tendremos hecha la relación muchos a muchos.
+
+La interfaz de usuario se realizó con GWT. 
+
+===Aún por terminar la descripción.===
