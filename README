@@ -7,6 +7,13 @@ Si la "persona dos"(id p2) realiza los roles de: "Cocinero"(id r3) y "Mesero"(id
 El rol de "Administrador" tendrá en su ArrayList el valor (p1); el rol de "Mesero" tendrá en su ArrayList el valor de (p2); finalmente, el rol de "Cocinero" tendrá en su ArrayList los valores de (p1, p2).
 De esta manera tendremos hecha la relación muchos a muchos.
 
-La interfaz de usuario se realizó con GWT. 
+La interfaz de usuario se realizó con GWT. La descripción de las clases se muestra a continuación:
+RelacionMultiple es el punto de entrada en la aplicación.
+VistaPrincipal contiene los objetos de la interfaz gráfica y los organiza en un tabPanel. También atiende el evento de elegir la pestaña3 o la pestaña4 para así cargar la información.
+AltaElemento es una clase abstracta que funciona como modelo para los formularios de alta de información (alta de una persona y de un rol). Indica las funciones principales que deben de llevar sus clases hijas y responde al evento clic del formulario (cuando se va a almacenar la información). También solicita una validación de los campos que se especifica en sus clases hijas.
+AsignacionMultiple es otra clase abstracta que funciona como base para los controles donde se asignan las relaciones de los elementos creados. Al igual que AltaElemento, responde a ciertos eventos (clic y change). Aquí es donde se realiza la carga de los datos.
+AltaRol y AltaUsuario son las clases hijas de AltaElemento. Aquí ya se detallan los controles, validaciones y envío de la información a la base de datos.
+AsignacionRol y AsignacionUsuario son las clases hijas de AsignaciomMultiple. Aquí ya se detallan los controles, validaciones y envío de la información a la base de datos.
+En la carpeta server tenemos las clases donde se especifican las consultas y las actividades sobre los datos para su almacenamiento y actualización.
 
-===Aún por terminar la descripción.===
+Esta es una descripción a grandes rasgos de lo que es este repositorio. Un ejemplo de cómo realizar una relación m:n (muchos a muchos) usando App Engine y GWT.
